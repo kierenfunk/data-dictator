@@ -29,6 +29,12 @@ jobs:
       - run:
           name: Run tests
           command: npm test
+      - run: 
+          name: Package extension
+          command: npm run export
+       - store_artifacts:
+          path: data-dictator.zip
+          destination: data-dictator.zip
 
 workflows:
   # Below is the definition of your workflow.
