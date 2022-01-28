@@ -32,7 +32,7 @@ jobs:
       - run: 
           name: Package extension
           command: npm run export
-       - store_artifacts:
+      - store_artifacts:
           path: data-dictator.zip
           destination: data-dictator.zip
 
