@@ -1,0 +1,55 @@
+{
+  "name": "data-dictator",
+  "version": "1.0.0",
+  "description": "Chrome extension for brokers to enforce data standards in Connective Nexus",
+  "main": "index.js",
+  "scripts": {
+    "build": "export NODE_ENV=production && webpack --config webpack.js",
+    "export": "npm run build && zip -r data-dictator.zip dist",
+    "test": "npx jest --coverage",
+    "lint": "npx eslint src/ --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kierenfunk/data-dictator.git"
+  },
+  "author": "Kieren Funk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kierenfunk/data-dictator/issues"
+  },
+  "homepage": "https://github.com/kierenfunk/data-dictator#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11",
+    "@types/chrome": "^0.0.177",
+    "@types/jest": "^27.4.0",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "autoprefixer": "^10.4.2",
+    "babel-jest": "^27.4.6",
+    "babel-loader": "^8.2.3",
+    "copy-webpack-plugin": "^10.2.2",
+    "css-loader": "^6.5.1",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-plugin-import": "^2.25.4",
+    "jest": "^27.4.7",
+    "postcss": "^8.4.5",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.2.3",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.0.17",
+    "ts-jest": "^27.1.3",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.5",
+    "webpack-cli": "^4.9.2"
+  }
+}
