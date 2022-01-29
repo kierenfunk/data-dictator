@@ -1,6 +1,11 @@
-describe('sample tests', () => {
-  it('adds 1 + 2 to equal 3', () => {
+import configItems from './assets/configitems.json';
+import getApiKey from '../src/connective/getApiKey';
+// require('jest-fetch-mock').enableMocks();
+
+describe('connective data extraction', () => {
+  it('get api key from config items', () => {
     expect.hasAssertions();
-    expect(1 + 2).toBe(3);
+    expect(getApiKey(configItems)).toBe(process.env.API_KEY);
+    expect(getApiKey({ success: true, configItems: [] })).toBe('');
   });
 });
