@@ -24,9 +24,16 @@ module.exports = {
     '@typescript-eslint',
   ],
   ignorePatterns: ["src/inject.js", "dist/", '.eslintrc.js', 'webpack.js', 'postcss.config.js'],
+  overrides: [
+    {
+      "files": ["tests/*.js"],
+      "rules": {
+        'jest/require-hook': "error"
+      }
+    }
+  ],
   rules: {
-    "import/extensions": "off",
-    "import/no-extraneous-dependencies": "off",
-    'jest/require-hook': "off"
+    'jest/require-hook': "off",
+    "quotes": ["error", "single"]
   },
 };
