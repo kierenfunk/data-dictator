@@ -2,11 +2,13 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    webextensions: true
+    webextensions: true,
+    "jest/globals": true
   },
   extends: [
     'airbnb-base',
-    'airbnb-typescript/base'
+    'airbnb-typescript/base',
+    'plugin:jest/all',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -17,7 +19,11 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
   ],
+  ignorePatterns: ["src/inject.js", "dist/", '.eslintrc.js'],
   rules: {
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    'jest/require-hook': "off"
   },
 };
+
