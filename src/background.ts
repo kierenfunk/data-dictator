@@ -1,5 +1,7 @@
+import ChromeMessagePayload from './types/ChromeMessagePayload';
+
 chrome.runtime.onMessage.addListener(
-  (payload, _sender, _sendResponse) => {
+  (payload : ChromeMessagePayload, _sender, _sendResponse) => {
     switch (payload.cmd) {
       case 'setToken':
         // eslint-disable-next-line

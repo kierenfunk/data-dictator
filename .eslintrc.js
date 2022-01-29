@@ -6,9 +6,13 @@ module.exports = {
     "jest/globals": true
   },
   extends: [
+    "eslint:recommended",
     'airbnb-base',
     'airbnb-typescript/base',
     'plugin:jest/all',
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    'plugin:@typescript-eslint/recommended-requiring-type-checking'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -19,11 +23,10 @@ module.exports = {
   plugins: [
     '@typescript-eslint',
   ],
-  ignorePatterns: ["src/inject.js", "dist/", '.eslintrc.js'],
+  ignorePatterns: ["src/inject.js", "dist/", '.eslintrc.js', 'webpack.js', 'postcss.config.js'],
   rules: {
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
     'jest/require-hook': "off"
   },
 };
-

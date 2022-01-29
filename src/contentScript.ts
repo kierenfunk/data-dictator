@@ -1,3 +1,5 @@
+import TokenPayload from './types/TokenPayload';
+
 const script = document.createElement('script');
 script.src = chrome.runtime.getURL('js/inject.js');
 (document.head || document.documentElement).appendChild(script);
@@ -5,6 +7,6 @@ script.src = chrome.runtime.getURL('js/inject.js');
 window.addEventListener('setToken', (data: CustomEvent) => {
   chrome.runtime.sendMessage({
     cmd: 'setToken',
-    data: data.detail,
+    data: <TokenPayload>data.detail,
   });
 });
